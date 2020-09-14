@@ -80,7 +80,14 @@ for category in categories:
             )
             if options:
                 for option in options:
-                    optionList = ["Option", option.text]
+                    option = option.text
+                    # Separate name from price in each option
+                    if '+' in option:
+                        name = option.split('+')[0]
+                        price = option.split('+')[1]
+                        optionList = ["Option", name, " ", price]
+                    else:
+                        optionList = ["Option", option]
                     worksheet.append_row(values=optionList)
         except NoSuchElementException:
             pass
@@ -92,4 +99,3 @@ for category in categories:
             )
         ).click()
         time.sleep(8)
-        print()
