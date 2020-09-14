@@ -13,8 +13,7 @@ import gspread  # Gspread to access google sheets
 
 
 options = webdriver.ChromeOptions()
-# options.add_argument('--headless')
-# options.add_argument('--disable-gpu')
+options.add_argument('--headless')
 DRIVER_PATH = r"chromedriver"
 options.binary_location = (
     r"/Applications/Google Chrome 3.app/Contents/MacOS/Google Chrome"
